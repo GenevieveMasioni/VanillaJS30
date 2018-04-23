@@ -1,0 +1,123 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: clock, neutral
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. HEADER
+  2. CLOCK
+  3. CLOCK FACE
+  5. CREDITS
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+html, body {
+  font-size: 16px;
+}
+
+body {
+  font-family: sans-serif;
+  background: #E3E9EE;
+}
+
+/************************************************
+1.	HEADER
+************************************************/
+
+header {
+  text-align: center;
+  padding: .5rem;
+}
+
+#site-title {
+  font-family: 'Faster One', sans-serif;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  font-size: 3rem;
+  color: transparent;
+  text-shadow: 0 0 .1rem rgba(255,255,255,0.6);
+  background-color: #810F0F;
+  background-clip: text;
+}
+
+
+/************************************************
+2.	CLOCK
+************************************************/
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 20rem;
+  margin: 5rem auto;
+  border-radius: 50%;
+  background: #000000;
+}
+
+/************************************************
+3.	CLOCK FACE
+************************************************/
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translate(-3px);
+}
+
+.hand {
+  width: 50%;
+  height: .4rem;
+  position: absolute;
+  top: 50%;
+  background: #fff;
+  transform: rotate(90deg);
+  transform-origin: 100%;
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.hour-hand {
+}
+
+.min-hand {
+  background: #CDB91F;
+}
+
+.second-hand {
+  background: #CD361F;
+}
+
+.circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #FFFFFF;
+  border-radius: 100%;
+  position: absolute;
+}
+
+/************************************************
+4.	FOOTER
+************************************************/
+
+footer {
+  padding: 2rem;
+  font-size: .7rem;
+  text-align: center;
+  bottom: 0;
+}

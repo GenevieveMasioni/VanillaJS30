@@ -1,0 +1,106 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags:
+
+**************************************************************
+
+Table of Contents:
+
+0. GLOBAL
+1. HEADER
+2. SEARCH
+3. RESULTS
+4. FOOTER
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font: 16px;
+  --base-color: #273552;
+  --base-font-family: 'Roboto', sans-serif;
+  --base-title: 'Iceberg', sans-serif;
+  --base-subtext: .8rem;
+  --base-padding: 1rem;
+}
+
+html, body {
+  font-size: var(--base-font);
+}
+
+body {
+  background: #f4f6fc url('../images/raphael-rychetsky.jpg') no-repeat;
+  background-size: cover;
+  color: var(--base-color);
+  font-family: var(--base-font-family);
+  padding: var(--base-padding);
+}
+
+header, main, footer {
+  text-align: center;
+}
+
+/************************************************
+1.	HEADER
+************************************************/
+
+#site-title {
+  font-family: var(--base-title);
+}
+
+/************************************************
+2.	SEARCH
+************************************************/
+
+main {
+  margin: 5rem 0;
+}
+
+.search-bar {
+  box-shadow: 0 0 1rem #e2e7f3;
+  border: none;
+  width: 25rem;
+  height: 4rem;
+  padding: var(--base-padding);
+  font-size: 1.5rem;
+  color: #4c77ec;
+}
+
+/************************************************
+3.	RESULTS
+************************************************/
+
+.results {
+  width: 20rem;
+  margin: 1rem auto;
+  padding: 0;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  background: #cfd9f3;
+  height: 3rem;
+  margin: .6rem 0;
+  padding: 0 var(--base-padding);
+  transform: skewY(3rem);
+}
+
+/************************************************
+4.	FOOTER
+************************************************/
+
+footer {
+  font-size: var(--base-subtext);
+  position: absolute;
+  bottom: 0;
+}

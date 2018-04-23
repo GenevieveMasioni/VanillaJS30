@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cities</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Iceberg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 id="site-title">Cities of the world</h1>
+      <h3>Where do you want to go ?</h3>
+    </header>
+    <main>
+      <input type="search" name="search" value="" class="search-bar">
+      <ul class="results">
+      </ul>
+    </main>
+    <footer>
+      <p>&copy; Photo by Stacy Wyss on Unsplash</p>
+    </footer>
+
+    <script type="text/javascript">
+    const destinations = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+    const results = document.querySelector('ul, .results');
+    const search = document.querySelector('.search-bar');
+    const cities = [];
+
+    fetch(destinations)
+    .then(des => des.json())
+    .then(data => cities.push(...data)); // spread data
+
+
+    function displayResult(e) {
+      if (results.childElementCount > 5){
+        results.innerHTML = '';
+      }
+      const li = document.createElement('li');
+      li.classList.add('result');
+      li.innerHTML = e.city + ", " + e.state;
+      results.appendChild(li);
+    }
+
+    function searchFilter() {
+      console.log(search.value);
+      cities.forEach(function(c){
+        if(c.city.includes(`${search.value}`)
+        || c.state.includes(`${search.value}`)) {
+          displayResult(c);
+        };
+      });
+    }
+
+    search.addEventListener('input', searchFilter);
+
+    </script>
+  </body>
+</html>

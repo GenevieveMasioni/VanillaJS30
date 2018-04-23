@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Underwater</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <div class="panels">
+    <div class="panel panel1">
+      <p>Hey</p>
+      <p>Let's</p>
+      <p>Dance</p>
+    </div>
+    <div class="panel panel2">
+      <p>Falling ?</p>
+      <p>Dive</p>
+      <p>Deep</p>
+    </div>
+    <div class="panel panel3">
+      <p>The</p>
+      <p>Right</p>
+      <p>Way</p>
+    </div>
+    <div class="panel panel4">
+      <p>Badly</p>
+      <p>In</p>
+      <p>Love</p>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+
+  const panels = document.querySelectorAll('.panel');
+
+  function setForward() {
+    this.style.filter = "none";
+    this.classList.add('primary-panel');
+    panels.forEach(panel => behind(panel));
+  }
+
+  function behind(e) {
+    if(!e.classList.contains('primary-panel')) {
+      e.style.filter = "contrast(70%)";
+    }
+  }
+
+  function setBackwards() {
+    this.classList.remove('primary-panel');
+  }
+
+  panels.forEach(panel => panel.addEventListener('mouseover', setForward));
+  panels.forEach(panel => panel.addEventListener('mouseout', setBackwards));
+
+  </script>
+</body>
+</html>

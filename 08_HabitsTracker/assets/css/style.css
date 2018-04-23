@@ -1,0 +1,164 @@
+/************************************************************
+
+Theme name :
+Description:
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags:
+
+**************************************************************
+
+Table of Contents:
+
+0. GLOBAL
+1. HEADER
+2. MAIN
+3. CARDS
+4. NEW HABIT
+5. BUTTONS
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-bg-color: #fff2cd;
+  --base-shadow-color: #e4caa9;
+  --habit-shadow: #cbc384;
+  --base-title: 'Montserrat', sans-serif;
+  --base-padding: 1rem;
+}
+
+html, body {
+  font-size: var(--base-font-size);
+}
+
+body {
+  background: var(--base-bg-color);
+  font-family: var(--base-title);
+}
+
+p {
+  font-size: .9rem;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid;
+  padding-bottom: .5rem;
+}
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: .3rem;
+}
+
+.subTitle {
+  width: 100%;
+}
+
+.subText {
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  margin: var(--base-padding) 0;
+}
+
+.habitTitle {
+  padding: 0;
+  margin: 0;
+}
+
+/************************************************
+1.	HEADER
+************************************************/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--base-padding) 4rem;
+  margin: 0 auto;
+}
+
+/************************************************
+2.	MAIN
+************************************************/
+
+main {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+/************************************************
+3.  CARDS
+************************************************/
+
+.card {
+  width: 30%;
+  margin: 0 var(--base-padding);
+  background: #fff4a4;
+  padding-bottom: 2rem;
+  box-shadow: 0rem .5rem 2rem var(--base-shadow-color);
+}
+
+.subCard {
+  width: 70%;
+  margin: 0 auto 2rem;
+  background: #fff;
+  box-shadow: 0rem .5rem 2rem var(--habit-shadow);
+  padding: var(--base-padding);
+}
+
+.habitHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.habitCategory {
+  margin: 0 0 .5rem;
+  color: var(--habit-shadow);
+}
+
+/************************************************
+4.	NEW HABIT
+************************************************/
+
+.newHabit .subCard {
+  padding-bottom: 2rem;
+}
+
+
+
+/************************************************
+5.	BUTTONS
+************************************************/
+
+.btnAddHabit {
+  width: 2rem;
+  height: 2rem;
+  background: #fff;
+  border-radius: 50%;
+  border: none;
+  margin: 0 auto;
+}
+
+.btnSubmit {
+  margin: var(--base-padding) auto 0;
+  width: 100%;
+  /* padding: .8rem;
+  background: #83a7bd;
+  border: none;
+  color: #fff; */
+}

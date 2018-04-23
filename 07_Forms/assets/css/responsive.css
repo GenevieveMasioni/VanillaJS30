@@ -1,0 +1,32 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: forms, responsive
+
+**************************************************************
+
+Table of Contents:
+
+1. SCREENS < 1170px
+
+**************************************************************/
+
+
+/************************************************
+1.	SCREENS < 1170px
+************************************************/
+
+@media only screen and (max-width: 1170px) {
+  form.left {
+    right: 11.5%;
+  }
+
+  form.right {
+    left: 54.5%;
+  }
+
+}

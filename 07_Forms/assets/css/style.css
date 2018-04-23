@@ -1,0 +1,150 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: forms
+
+**************************************************************
+
+Table of Contents:
+
+0. GLOBAL
+1. HEADER
+2. CONTAINER
+3. FORMS
+4. BUTTONS
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font: 16px;
+  --base-padding: 1rem;
+  --base-color: #5c6aba;
+  --base-title: 'Faster One', sans-serif;
+}
+
+html, body {
+  font-size: var(--base-font);
+}
+
+body {
+  padding: var(--base-padding);
+  overflow: hidden;
+}
+
+* {
+  transition: ease 0.5s;
+}
+
+/************************************************
+1.	HEADER
+************************************************/
+
+header {
+  text-align: center;
+}
+
+#site-title {
+  font-family: var(--base-title);
+  color: var(--base-color);
+  font-size: 2.5rem;
+}
+
+/************************************************
+2.	CONTAINER
+************************************************/
+
+.container {
+  border: 1px solid var(--base-color);
+  display: flex;
+  margin: 5rem auto;
+  height: 30rem;
+  width: 90%;
+}
+
+/************************************************
+3.	FORMS
+************************************************/
+
+form {
+  width: 18rem;
+  height: 28rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 2rem 2rem 0;
+  background: #fff;
+  box-shadow: -.3rem .3rem .8rem #cbcbcb;
+  position: absolute;
+  top: 8.5rem;
+}
+
+form.left {
+  left: 14%;
+}
+
+form.right {
+  left: 59.5%;
+}
+
+section.left, section.right {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+section.left {
+  background: #f8f8f8;
+}
+
+
+input {
+  margin-bottom: 1rem;
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid  #eaeaea;
+  padding: .5rem;
+  font-size: 1rem;
+}
+
+/************************************************
+4.	BUTTONS
+************************************************/
+
+button {
+  width: 10rem;
+  height: 3rem;
+  background: var(--base-color);
+  color: #fff;
+  border: none;
+  margin: 2rem;
+  border-radius: 1rem;
+  font-size: var(--base-font);
+}
+
+button:hover {
+  background: none;
+  border: 1px solid var(--base-color);
+  color: var(--base-color);
+}
+
+button.green-btn {
+  background: #48c275;
+  color: #fff;
+}
+
+button.green-btn:hover {
+  background: #63d88e;
+  border: none;
+}

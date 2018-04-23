@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Habits Tracker</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <i class="fa fa-bars btn btnBurger"></i>
+    <h1 class="title site-title">Habits Tracker</h1>
+    <i class="fa fa-search btnSearch"></i>
+  </header>
+  <main>
+    <section class="card habits">
+      <h4 class="title subTitle">Habits</h4>
+      <article class="subCard habit">
+        <h6 class="habitCategory">Category</h6>
+        <section class="habitHead">
+          <h4 class="habitTitle">Read more books</h4>
+          <input type="checkbox" name="btnCheck" value="" class="btnCheck" onclick="confirmTask(this)">
+        </section>
+        <p class="habitBrief">Five pages a day</p>
+      </article>
+    </section>
+    <section class="card newHabit">
+      <h4 class="title subTitle">New Habit</h4>
+      <article class="subCard">
+      <h6 class="subText">Habit Name</h6>
+      <input type="text" name="habitName" value="" placeholder="Give it a name !">
+      <h6 class="subText">Category</h6>
+      <input type="text" name="habitCat" value="" placeholder="Give a category">
+      <h6 class="subText">Brief</h6>
+      <input type="text" name="habitBrief" value="" placeholder="Tell me more about it.">
+      <button type="button" name="btnSubmit" class="btnSubmit" onclick="addHabit(habitName.value, habitBrief.value, habitCat.value)">Save</button>
+    </article>
+  </section>
+  <section class="card statistics">
+    <h4 class="title subTitle">Statistics</h4>
+    <article class="subCard">
+      <p>Some statistics</p>
+    </article>
+  </section>
+</main>
+
+<script type="text/javascript">
+var d = new Date();
+
+var arrayHabitsTracker = [
+  { date: d, habits: [] }
+];
+
+// display habit card on screen
+function displayHabits() {
+  card.innerHTML = '';
+  const cardTitle = document.createElement('h4');
+  cardTitle.classList.add('title', 'subTitle');
+  cardTitle.innerHTML = 'Habits';
+  card.appendChild(cardTitle);
+
+  arrayHabitsTracker.forEach((h) => h.habits.forEach((hh) => {
+    const scard = document.createElement('article');
+    const head = document.createElement('section');
+
+    const cat = document.createElement('h6');
+    const name = document.createElement('h4');
+    const brief = document.createElement('p');
+    const btnCheck = document.createElement('input');
+
+    scard.classList.add('subCard', 'habit');
+    head.classList.add('habitHead');
+
+    name.classList.add('habitTitle');
+    cat.classList.add('habitCategory');
+    brief.classList.add('habitBrief');
+    btnCheck.classList.add('btnCheck');
+
+    btnCheck.name = 'btnCheck';
+    btnCheck.type = 'checkbox';
+    btnCheck.onclick = 'confirmTask(this)';
+
+    cat.innerHTML = hh.category;
+    name.innerHTML = hh.name;
+    brief.innerHTML = hh.brief;
+
+    head.appendChild(name);
+    head.appendChild(btnCheck);
+    scard.appendChild(cat);
+    scard.appendChild(head);
+    scard.appendChild(brief);
+
+    card.appendChild(scard);
+  }));
+}
+
+// add an habit to arrayHabitsTracker
+function addHabit(elName, elBrief, elCat) {
+  if(elName == '' || elBrief == '' || elCat == '') return;
+  var o = new Object();
+  o = {name: `${elName}`, brief: `${elBrief}`, category: `${elCat}`}
+  console.log(o);
+  arrayHabitsTracker.forEach((h) => {
+    if(h.date = d) h.habits.push(o);
+  });
+  displayHabits();
+  btnsCheck = document.querySelectorAll('.btnCheck');
+}
+
+function confirmTask(e) {
+  // save the task to memory
+  console.log(e);
+}
+
+const card = document.querySelector("section[class='card habits']");
+const habitName = document.querySelector("input[name='habitName']");
+const habitCat = document.querySelector("input[name='habitCat']");
+const habitBrief = document.querySelector("input[name='habitBrief']");
+const btnSubmit = document.querySelector("button[name='btnSubmit']");
+
+var btnsCheck = document.querySelectorAll('.btnCheck');
+console.log(arrayHabitsTracker);
+
+displayHabits();
+btnsCheck.forEach((e) => {e.addEventListener('click', confirmTask(e))});
+console.log(btnsCheck);
+
+</script>
+
+</body>
+</html>

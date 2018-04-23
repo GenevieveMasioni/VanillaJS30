@@ -1,0 +1,97 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: drum kit, 30DaysJavaScript
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. HEADER
+  2. KEYS
+  3. CREDITS
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+html, body {
+  font-size: 16px;
+}
+
+body {
+  background: #201d15 url("../images/drumkit.jpg") no-repeat fixed center;
+  background-size: cover;
+  font-family: sans-serif;
+  color: white;
+}
+
+/************************************************
+1.	HEADER
+************************************************/
+
+header {
+  text-align: center;
+  padding: .5rem;
+}
+
+#site-title {
+  font-family: 'Metal Mania', cursive;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
+
+/************************************************
+2.	KEYS
+************************************************/
+
+.keys {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.key {
+  background: #301f23;
+  padding: 1rem;
+  width: 4rem;
+  margin: 1rem 0;
+  border-radius: .5rem;
+  transition: all 0.07s;
+}
+
+.key kbd {
+  font-family: 'Metal Mania', cursive;
+  font-size: 2rem;
+  color: #f8ddba;
+}
+
+.playing {
+  background: #2e1f30;
+  box-shadow: 0 0 .5rem #000;
+  transform: scale(1.1);
+}
+
+/************************************************
+3.	CREDITS
+************************************************/
+
+footer {
+  padding: 2rem;
+  font-size: .7rem;
+  color: #466d82;
+  bottom: 0;
+}

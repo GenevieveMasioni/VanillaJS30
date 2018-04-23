@@ -1,0 +1,49 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+
+**************************************************************
+
+Table of Contents:
+
+  1. MEDIA QUERY < 1345px
+  2. MEDIA QUERY < 845px
+  3. MEDIA QUERY < 700px
+
+**************************************************************/
+
+/************************************************
+1.	MEDIA QUERY < 1345px
+************************************************/
+
+@media only screen and (max-width: 1345px) {
+  .profile {
+    width: 25%;
+  }
+}
+
+
+/************************************************
+2.	MEDIA QUERY < 845px
+************************************************/
+
+@media only screen and (max-width: 845px) {
+  .profile {
+    width: 40%;
+  }
+}
+
+
+/************************************************
+3.	MEDIA QUERY < 700px
+************************************************/
+
+@media only screen and (max-width: 845px) {
+  .profile {
+    width: 100%;
+  }
+}

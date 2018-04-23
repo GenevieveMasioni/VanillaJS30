@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>The Little Train</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700i">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <section class="left">
+    <header>
+      <h1 id="site-title">The little train</h1>
+      <p class="subtitle">Update CSS variables with JS</p>
+    </header>
+    <div class="parameters">
+      <div class="image">
+        <h3>Image</h3>
+        <div class="param grayscale">
+          <label for="grayscale">Grayscale</label>
+          <input type="range" name="grayscale" min="0" max="100" value="0" data-sizing="%">
+        </div>
+        <div class="param hue">
+          <label for="hue">Hue</label>
+          <input type="range" name="hue" min="0" max="360" value="0" data-sizing="deg">
+        </div>
+      </div>
+      <div class="shadow">
+        <h3>Shadow</h3>
+        <div class="param spacing">
+          <label for="spacing">Spacing</label>
+          <input type="range" name="spacing" min="10" max="60" value="10" data-sizing="px">
+        </div>
+        <div class="param blur">
+          <label for="blur">Blur</label>
+          <input type="range" name="blur" min="0" max="20"  value="0" data-sizing="px">
+        </div>
+        <div class="param base">
+          <label for="base">Base color</label>
+          <input type="color" name="base" value="#253a3b">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="right">
+    <img src="assets/images/yiran-ding.jpg" alt="The Little Train" id="sample-image">
+  </section>
+  <footer>
+    <p>&copy; Photo by Yiran Ding on Unsplash</p>
+  </footer>
+
+  <script type="text/javascript">
+
+  const inputs = document.querySelectorAll('input'); // node list
+
+  function handleUpdate() {
+    const suffix = this.dataset.sizing || ''; // or nothing
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+  }
+
+  inputs.forEach(input => input.addEventListener('change', handleUpdate));
+  inputs.forEach(input => input.addEventListener('mouseover', handleUpdate));
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: rainbow, draw, pencil, art supplies
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. CANVAS
+  2. PARAMETERS
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-bg-color: #d8cbc7;
+  --base-shadow-color: #baaeab;
+  --base-font-color: #A79289;
+  --base-padding: 1rem;
+  --base-font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--base-font-family);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+label {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--base-font-color);
+}
+
+/************************************************
+1.	CANVAS
+************************************************/
+
+canvas#draw {
+  background: var(--base-bg-color) url('../images/canvasBg.png') no-repeat;
+  background-size: cover;
+}
+
+/************************************************
+2.	PARAMETERS
+************************************************/
+
+.param {
+  position: absolute;
+  bottom: 2rem;
+  /* left: 50%; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.param label {
+  margin-right: var(--base-padding);
+}
+
+.btnErase {
+  margin-left: var(--base-padding);
+}

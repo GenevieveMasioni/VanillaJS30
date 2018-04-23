@@ -1,0 +1,122 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: coming soon
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. MAIN
+  2. COMING SOON
+  3. NOTIFY
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-font-family: 'Open Sans', sans-serif;
+  --base-padding: 1rem;
+  --base-color: #fff;
+}
+
+
+html, body {
+  font-size: var(--base-font-size);
+  font-family: var(--base-font-family);
+  color: var(--base-color);
+}
+
+
+body {
+  background: #1a181e;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+section {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/************************************************
+1.	MAIN
+************************************************/
+
+main {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/************************************************
+2.	COMMING SOON
+************************************************/
+
+.coming {
+  height: 15rem;
+  background: #1a181e url('../images/earthBg.jpg') no-repeat center;
+  background-size: contain;
+  background-blend-mode: exclusion;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 7rem;
+}
+
+.primaryTitle {
+  letter-spacing: 2.5rem;;
+  width: 100%;
+  margin: 3rem 0 var(--base-padding);
+}
+
+.timer {
+  font-weight: 200;
+  color: #9289ac;
+}
+
+/************************************************
+3.	NOTIFY
+************************************************/
+
+.subTitle {
+  color: #6f4d57;
+  letter-spacing: .2rem;
+}
+
+.email, .btnNotify {
+  border: none;
+  border-radius: var(--base-padding);
+  padding: .5rem var(--base-padding);
+  margin: .5rem;
+}
+
+.email {
+  width: 15rem;
+  border: none;
+  box-shadow: none;
+  color: var(--base-color);
+  background: #121113;
+}
+
+.btnNotify {
+  background: #2e2d3f;
+  color: #9289ac;
+}

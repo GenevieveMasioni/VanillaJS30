@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Coming soon</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <main>
+    <section class="coming">
+      <div class="time">
+        <h2 class="timer" data-divider=':'></h2>
+        <h1 class="primaryTitle">Comming soon</h1>
+      </div>
+    </section>
+    <section class="notify">
+      <h5 class="subTitle">Get notified when it's ready</h5>
+      <div class="enroll">
+        <input class="email" type="email" name="email" value="" placeholder="Enter your email">
+        <button class="btnNotify" type="button" name="btnNotify">Notify me</button>
+      </div>
+    </section>
+  </main>
+
+
+  <script type="text/javascript">
+  var timer = document.querySelector('.timer');
+  const email = document.querySelector("input[type='email']");
+  const notifyBtn = document.querySelector('.btnNotify');
+  let hours = '01', minutes = 45, seconds = 0;
+  const separator = timer.dataset.divider;
+
+  function checkEmailValidity() {
+    if(email.value === '' || !email.value.includes('@')) {
+      email.value = '';
+      email.placeholder = 'Enter a valide email address';
+      email.style.border = '1px solid red';
+    } else {
+      email.style.border = '1px solid green';
+    }
+  }
+
+  function displayTime() {
+    let t = '0';
+    if(seconds > 9) t = '';
+      timer.innerHTML = hours + ' ' + separator + ' ' + minutes
+      + ' ' + separator + ' ' +  t + seconds;
+  }
+
+  function timeDecrease() {
+    if(seconds < 59) {
+      seconds++;
+      displayTime();
+    }
+
+    if(seconds == 59) {
+      seconds = 0;
+      minutes--;
+    }
+
+    if(minutes == 0) {
+      hours--;
+    }
+  }
+
+  notifyBtn.addEventListener('click', checkEmailValidity);
+  email.addEventListener('focus', () => email.style.border = 'none');
+
+  setInterval(timeDecrease, 1000);
+
+  </script>
+</body>
+</html>

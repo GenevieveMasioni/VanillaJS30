@@ -1,0 +1,27 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: drum kit, 30DaysJavaScript
+
+**************************************************************
+
+Table of Contents:
+
+  1. MEDIA QUERY > 1095px
+
+**************************************************************/
+
+
+/************************************************
+1.	MEDIA QUERY > 1085px
+************************************************/
+
+@media only screen and (min-width: 1095px) {
+  footer {
+    position: absolute;
+  }
+}
