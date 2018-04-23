@@ -1,0 +1,129 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: gafam
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. INSTRUCTIONS
+  2. MAIN
+  3. TABLE
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-font-family: 'Montserrat', 'Open sans', sans-serif;
+  --base-padding: 1rem;
+  --main-color: #1a4ec4;
+  --secondary-color: #f15543;
+  --third-color: #ffab00;
+  --shawdow-blue: #0d3693;
+  --shadow-spacing: .8rem;
+}
+
+
+html, body {
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-family: var(--base-font-family);
+  background: var(--main-color);
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+.gafam {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: line-through;
+  /* color: var(--third-color); */
+}
+
+/************************************************
+1.	INSTRUCTIONS
+************************************************/
+
+.instructions {
+  width: 25rem;
+  background: #da4833 url('../images/cartographer.png');
+  position: absolute;
+  padding: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-spacing) var(--shadow-spacing) var(--third-color);
+}
+
+.instructions > * {
+  width: 70%;
+}
+
+.start {
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  text-decoration: underline;
+  background: none;
+  font-size: var(--base-padding);
+  color: var(--third-color);
+}
+
+/************************************************
+2.	MAIN
+************************************************/
+
+main {
+  text-align: center;
+}
+
+/************************************************
+3.	TABLE
+************************************************/
+
+table {
+  width: 25rem;
+  margin: 0 auto var(--base-padding);
+  border-collapse: collapse;
+  display: none;
+  box-shadow: var(--base-padding) var(--base-padding) var(--shawdow-blue);
+}
+
+td {
+  background: var(--main-color);
+  border: .2rem solid var(--third-color);
+  width: 3rem;
+  height: 4rem;
+  text-align: center;
+  color: #fff;
+}
