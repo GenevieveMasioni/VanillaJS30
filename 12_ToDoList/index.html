@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <i class="fa fa-bars fa-lg"></i>
+      <h1 class="title primaryTitle">Today</h1>
+      <p class="date">date of the day</p>
+    </header>
+    <div class="tasks">
+      <div class="item">
+        <input type="checkbox">
+        <p>Clean up my GitHub account</p>
+      </div>
+      <div class="item">
+        <input type="checkbox">
+        <p>Update my online portfolio</p>
+      </div>
+      <div class="item">
+        <input type="checkbox">
+        <p>Apply for a summer internship</p>
+      </div>
+      <div class="item">
+        <input type="checkbox">
+        <p>Complete the habits tracker mockup</p>
+      </div>
+      <div class="item">
+        <input type="checkbox">
+        <p>Products for the online shop</p>
+      </div>
+      <div class="item">
+        <input type="checkbox">
+        <p>HTML/CSS/JS ebooks</p>
+      </div>
+      <div class="item">
+        <input type="checkbox">
+        <p>Sites & apps specs (Adobe XD)</p>
+      </div>
+      <div class="item">
+        <input type="checkbox">
+        <p>Youtube tech videos</p>
+      </div>
+      <div class="item">
+        <input type="checkbox">
+        <p>innerVoices app research</p>
+      </div>
+      <div class="item">
+        <input type="checkbox">
+        <p>Computer science homeworks (-__-)</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+  const time = document.querySelector('.date');
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+  const items = document.querySelectorAll('.item');
+
+  var d = new Date();
+  time.innerHTML = d.toDateString();
+
+  let lastChecked;
+
+  function handleCheck(e) {
+    if(this.parentElement.children[0].checked == true) {
+      this.parentElement.children[1].style.textDecoration = 'line-through';
+  } else {
+    this.parentElement.children[1].style.textDecoration = 'none';
+  }
+    if(e.shiftKey) { // from lastChecked to actual
+      // lastChecked item index
+      let l = 0;
+      while(items[l] != lastChecked.parentElement) l++;
+
+      // actual item index
+      let a = 0;
+      while(items[a] != this.parentElement) a++;
+
+      if(l - a > 0) {
+        for (var i = a; i <= l; i++) {
+          items[i].children[0].checked = true;
+          items[i].children[1].style.textDecoration = 'line-through';
+        }
+      } else {
+        for(var i = l; i <= a; i++) {
+          items[i].children[0].checked = true;
+          items[i].children[1].style.textDecoration = 'line-through';
+        }
+      }
+    }
+    lastChecked = this;
+  }
+
+  checkboxes.forEach((c) => c.addEventListener('click', handleCheck));
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+
+Video related properties/ events
+
+- paused
+- play/ playing
+- timeUpdate
+
+Video related methods
+
+- play()
+- pause()
