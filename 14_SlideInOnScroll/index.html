@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>.space</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,700|Roboto+Mono">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1 class="title siteTitle">.space</h1>
+    <ul class="menu menu-display">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#work">Works</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#hire">Hire us</a></li>
+      <li><a href="blog.html">Our blog</a></li>
+    </ul>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <h2 class="title heroTitle">Your next <br> design <br> experience</h2>
+    </section>
+    <section class="work" id="work">
+      <div class="work__portfolio">
+        <img src="assets/images/juja-han.jpg"
+        alt="work 1" class="work__portfolio__hero slide_in work__left">
+        <div class="work__portfolio__side">
+          <img src="assets/images/LUDOVIC-BALLAND_2015_TYPOJANCHI.jpg"
+          alt="work 2" class="slide_in work__right">
+        </div>
+      </div>
+      <div class="work__portfolio__scd">
+        <img src="assets/images/blondegirl.gif"
+        alt="work 4" class="slide_in work__left">
+        <img src="assets/images/valles-mariners.jpg"
+        alt="work 5" class="slide_in work__left">
+        <img src="assets/images/meric-dagli.jpg"
+        alt="work 6" class="slide_in work__left">
+        <img src="assets/images/jeff-frenette.jpg"
+        alt="work 7" class="slide_in work__right">
+        <img src="assets/images/andrew-kitzmiller.jpg"
+        alt="work 8" class="slide_in work__right">
+        <img src="assets/images/sea-cliff.jpg"
+        alt="work 9" class="slide_in work__right">
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h3 class="title subTitle">About us</h3>
+      <blockquote class="highlight">We believe design can save the world.</blockquote>
+      <div class="about__story">
+        <p class="about__story_left">Ob haec et huius modi multa, quae cernebantur in paucis,
+          omnibus timeri sunt coepta. et ne tot malis dissimulatis
+          paulatimque serpentibus acervi crescerent aerumnarum,
+          nobilitatis decreto legati mittuntur: Praetextatus ex
+          urbi praefecto et ex vicario Venustus et ex consulari
+          Minervius oraturi, ne delictis supplicia sint grandiora,
+          neve senator quisquam inusitato et inlicito more tormentis
+          exponeretur.
+        </p>
+        <p class="about__story_right">Batnae municipium in Anthemusia conditum Macedonum manu
+          priscorum ab Euphrate flumine brevi spatio disparatur,
+          refertum mercatoribus opulentis, ubi annua sollemnitate
+          prope Septembris initium mensis ad nundinas magna promiscuae
+          fortunae convenit multitudo ad commercanda quae Indi mittunt
+          et Seres aliaque plurima vehi terra marique consueta.
+        </p>
+      </div>
+    </section>
+    <section class="hire" id="hire">
+      <h3 class="title subTitle">Hire us to do</h3>
+      <div class="hire__expertises">
+        <div class="hire__expertise">
+          <label for="webdesign">Web design</label>
+          <input type="radio" name="webdesign">
+        </div>
+        <div class="hire__expertise">
+          <label for="uiuxdesign">UI/UX design</label>
+          <input type="radio" name="uiuxdesign">
+        </div>
+        <div class="hire__expertise">
+          <label for="graphicdesign">Graphic design</label>
+          <input type="radio" name="graphicdesign">
+        </div>
+        <div class="hire__expertise">
+          <label for="motiondesign">Motion design</label>
+          <input type="radio" name="motiondesign">
+        </div>
+      </div>
+      <div class="hire__contact">
+        <input type="text" name="contactName" placeholder="Name"
+        class="hire__contactName">
+        <input type="email" name="contactEmail" placeholder="Email"
+        class="hire__contactEmail">
+      </div>
+      <div class="hire__request">
+        <button type="button" name="button"
+        class="hire__sendBtn">Send request</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer__social">
+      <i class="fa fa-sm fa-instagram"></i>
+      <i class="fa fa-sm fa-behance"></i>
+      <i class="fa fa-sm fa-facebook"></i>
+    </div>
+    <p>&copy; .space studio</p>
+  </footer>
+  <div class="screenSizeError">
+    <h1 class="title siteTitle">.space</h1>
+    <p>We have so much to offer !
+      We suggest you find a larger screen to enjoy the experience.
+    </p>
+  </div>
+
+  <script type="text/javascript">
+
+  // for performanace issue -- run checkSlide every 20 milliseconds instead of 50+
+  function debounce(func, wait = 20, immediate = true) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if(!immediate) func.apply(context, args);
+      }
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if(callNow) func.apply(context, args);
+    }
+  }
+
+  const images = document.querySelectorAll('.slide_in');
+
+  function checkSlide(e) {
+    images.forEach(img => {
+      // in pixels, innnerHeight = visible part
+      // are we half way through the image ?
+      const slideInAt = (window.scrollY + window.innerHeight) -
+      img.height / 2;
+      // where is the bottom of the image?
+      const imgBottom = img.offsetTop + img.height;
+      const isHalfShown = slideInAt > img.offsetTop;
+      const isNotScrolledPast = window.scrollY < imgBottom;
+      if(isHalfShown && isNotScrolledPast) {
+        img.classList.add('active');
+      } else {
+        img.classList.remove('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', debounce(checkSlide));
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: slide in, design studio
+
+**************************************************************
+
+Table of Contents:
+
+  1. MEDIA QUERY < 1095px
+  2. MEDIA QUERY < 774px
+
+**************************************************************/
+
+/************************************************
+1.	MEDIA QUERY < 1095px
+************************************************/
+
+@media only screen and (max-width: 1095px) {
+  .about__story, .two_column {
+    display: inline;
+  }
+}
+
+/************************************************
+2.	MEDIA QUERY < 774px
+************************************************/
+
+@media only screen and (max-width: 774px) {
+  header, main, footer {
+    display: none;
+  }
+
+  .screenSizeError {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--base-padding);
+  }
+}

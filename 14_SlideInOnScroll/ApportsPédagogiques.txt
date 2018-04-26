@@ -1,0 +1,5 @@
+
+- slide in on scroll effect
+- window scroll event
+- debouncing function
+- BEM for CSS
