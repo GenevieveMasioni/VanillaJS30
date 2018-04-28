@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>All Your Base</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P:400,700|Roboto+Mono">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <h1 class="title">All your base are belong to us.</h1>
+  <div class="keys">
+    <p class="key">Password ?</p>
+  </div>
+  <div class="monsters">
+    <div class="monster blue space-invader"></div>
+    <div class="monster red space-invader"></div>
+    <div class="monster orange space-invader"></div>
+    <div class="monster green space-invader"></div>
+    <div class="monster salmon space-invader"></div>
+    <div class="monster green-blue space-invader"></div>
+    <div class="monster purple space-invader"></div>
+    <div class="monster violet space-invader"></div>
+    <div class="monster brown space-invader"></div>
+    <div class="monster blue space-invader"></div>
+    <div class="monster red space-invader"></div>
+    <div class="monster orange space-invader"></div>
+    <div class="monster green space-invader"></div>
+    <div class="monster salmon space-invader"></div>
+    <div class="monster green-blue space-invader"></div>
+    <div class="monster purple space-invader"></div>
+    <div class="monster violet space-invader"></div>
+    <div class="monster brown space-invader"></div>
+  </div>
+  <audio src="assets/audio/All Your Base Are Belong To Us.mp3" class="win_audio"></audio>
+
+  <script type="text/javascript">
+
+  // for performanace issue -- run checkSlide every 20 milliseconds instead of 50+
+  function debounce(func, wait = 200, immediate = true) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if(!immediate) func.apply(context, args);
+      }
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if(callNow) func.apply(context, args);
+    }
+  }
+
+  // pick a random number
+  function selectCodeIndex() {
+    let min = Math.ceil(0);
+    let max = Math.floor(codes.length - 1);
+    let num = Math.floor(Math.random() * (max - min + 1) + min);
+    return num;
+  }
+
+  // all possible codes
+  const codes = ['webdev', 'javascript', 'vanilla',
+  'css', 'html', 'developer', 'code', 'konami'];
+
+  // store save pressed keys sequence
+  const pressed = [];
+
+  // the secret sequence for the round
+  const secretCode = codes[selectCodeIndex()];
+  console.log(secretCode);
+
+  // initial setup
+  const body = document.querySelector('body');
+  const title = document.querySelector('.title');
+  const keys = document.querySelector('.key');
+  const monsters = document.querySelector('.monsters');
+  const audio = document.querySelector('.win_audio');
+  let updateBgInterval = 0;
+  let hue = 0;
+
+  title.style.display = 'none';
+  monsters.style.display = 'none';
+  monsters.height = window.innerHeight;
+
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+    keys.textContent = e.key;
+    // start, nb of elements to remove
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length)
+    // check if pressed includes secretCode
+    if(pressed.join('').includes(secretCode)) {
+      keys.parentElement.style.display = 'none';
+      title.style.display = 'inline';
+      monsters.style.display = 'flex';
+      body.classList.add('win');
+      audio.play();
+    };
+  })
+
+  function handleAudio(e) {
+    if(audio.currentTime > 35) {
+      updateBgInterval = 5000;
+      setInterval(updateBg, updateBgInterval);
+    }
+
+    if(audio.currentTime >= 45) {
+      updateBgInterval = 3000;
+    }
+  }
+
+  function togglePlay(e) {
+    if(audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+
+  function updateBg() {
+    body.style.background = `hsl(${hue}, 50%, 45%)`;
+    hue += 40;
+  }
+
+  function stopEverything() {
+    updateBgInterval = 0;
+    body.style.background = 'black';
+  }
+
+  audio.addEventListener('timeupdate', debounce(handleAudio));
+  audio.addEventListener('ended', stopEverything);
+  monsters.addEventListener('click', togglePlay);
+
+  // setInterval(updateBg, updateBgInterval);
+
+  </script>
+</body>
+</html>

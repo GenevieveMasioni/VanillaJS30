@@ -1,0 +1,204 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: konami code
+
+**************************************************************
+
+Table of Contents:
+
+0. GLOBAL
+1. KEYS
+2. SHAKING ANIMATION
+3. MONSTERS
+4. WIN SCREEN
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-font-family: 'Roboto Mono', sans-serif;
+  --title-font-family: 'Press Start 2P', sans-serif;
+  --base-padding: 1rem;
+  --main-color: #000000;
+  --scd-color: #f7f6f5;
+  --third-color: #ef3c92;
+  --shadow-color: #8d57f6;
+  --monster-color: #c10001;
+}
+
+html, body {
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size);
+  background: var(--main-color);
+  color: var(--scd-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.title {
+  font-family: var(--title-font-family);
+  text-align: center;
+  z-index: 1;
+  font-size: 2rem;
+  color: #ffcc33;
+}
+
+/************************************************
+1.	kEYS
+************************************************/
+
+.keys {
+  padding: var(--base-padding);
+}
+
+.key {
+  font-size: 7rem;
+}
+
+/************************************************
+2.  SHAKING ANIMATION
+************************************************/
+
+@keyframes shaking {
+  from {
+    transform: translateX();
+  }
+  to {
+    transform: translateX(-.5rem);
+  }
+}
+
+
+/************************************************
+3.	MONSTERS
+************************************************/
+
+.monsters {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
+}
+
+.monsters > div.monster {
+  animation: shaking .05s infinite alternate;
+}
+
+.monsters > div:nth-child(2) {
+  animation-delay: 1s;
+  left: 10rem;
+}
+
+.monsters > div:nth-child(3) {
+  animation-delay: 2s;
+  left: -2rem;
+}
+
+.monsters > div:nth-child(4) {
+  animation-delay: 2.6s;
+  left: 25rem;
+}
+
+.monsters > div:nth-child(5) {
+  animation-delay: 4s;
+  left: 66rem;
+}
+
+.monsters > div:nth-child(6) {
+  animation-delay: 4.8s;
+  left: 27rem;
+}
+
+.monsters > div:nth-child(7) {
+  animation-delay: 5.3s;
+  left: 45rem;
+}
+
+.monsters > div:nth-child(8) {
+  animation-delay: 5.7s;
+  left: 37rem;
+}
+
+.monsters > div:nth-child(9) {
+  animation-delay: 6s;
+  left: 59rem;
+}
+
+.monsters > div:nth-child(10) {
+  animation-delay: 6s;
+  left: 55rem;
+}
+
+.monster {
+  width: 1rem;
+  height: 1rem;
+  background-blend-mode: hue;
+  filter: opacity(80%);
+  margin: 7rem;
+}
+
+.space-invader {
+  box-shadow:
+  0 0 0 1em var(--monster-color),
+  0 1em 0 1em var(--monster-color),
+  -2.5em 1.5em 0 .5em var(--monster-color),
+  2.5em 1.5em 0 .5em var(--monster-color),
+  -3em -3em 0 0 var(--monster-color),
+  3em -3em 0 0 var(--monster-color),
+  -2em -2em 0 0 var(--monster-color),
+  2em -2em 0 0 var(--monster-color),
+  -3em -1em 0 0 var(--monster-color),
+  -2em -1em 0 0 var(--monster-color),
+  2em -1em 0 0 var(--monster-color),
+  3em -1em 0 0 var(--monster-color),
+  -4em 0 0 0 var(--monster-color),
+  -3em 0 0 0 var(--monster-color),
+  3em 0 0 0 var(--monster-color),
+  4em 0 0 0 var(--monster-color),
+  -5em 1em 0 0 var(--monster-color),
+  -4em 1em 0 0 var(--monster-color),
+  4em 1em 0 0 var(--monster-color),
+  5em 1em 0 0 var(--monster-color),
+  -5em 2em 0 0 var(--monster-color),
+  5em 2em 0 0 var(--monster-color),
+  -5em 3em 0 0 var(--monster-color),
+  -3em 3em 0 0 var(--monster-color),
+  3em 3em 0 0 var(--monster-color),
+  5em 3em 0 0 var(--monster-color),
+  -2em 4em 0 0 var(--monster-color),
+  -1em 4em 0 0 var(--monster-color),
+  1em 4em 0 0 var(--monster-color),
+  2em 4em 0 0 var(--monster-color);
+  overflow: hidden;
+  /* margin: 50px 0 70px 65px; */
+}
+
+
+/************************************************
+4.	WIN SCREEN
+************************************************/
+
+.win {
+  background: #f857a6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #ff5858, #f857a6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #000000, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
