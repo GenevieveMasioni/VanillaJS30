@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One:400,700|Nunito">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mainText">
+      A good <br>
+      tpyeafce <br>
+      mkaes <br>
+      ahnytnig <br>
+      eeisar <br>
+      to raed.
+    </h1>
+    <p>
+      Oportunum est, ut arbitror, explanare nunc causam,
+      quae ad exitium praecipitem Aginatium inpulit iam
+      inde a priscis maioribus nobilem, ut locuta est
+      pertinacior fama. nec enim super hoc ulla documentorum
+      rata est fides.
+    </p>
+  </div>
+
+  <script type="text/javascript">
+  const type = document.querySelector('.mainText');
+  const walk = 10; // pixels
+
+  function shadow(e) {
+    // const width = type.offsetWidth;
+    // const height = type.offsetHeight;
+    const {offsetWidth: width, offsetHeight: height} = type;
+    let { offsetX: x, offsetY: y } = e;
+
+    if(this !== e.target) {
+      x = x + e.target.offsetLeft;
+      y = y + e.target.offsetTop;
+    }
+
+    const xwalk = Math.round((x / width * walk) - (walk / 2));
+    const ywalk = Math.round((y / height * walk) - (walk / 2));
+
+    type.style.textShadow = `${xwalk}px ${ywalk}px 0 var(--shadow-color)`;
+  }
+
+  type.addEventListener('mousemove', shadow);
+
+  </script>
+</body>
+</html>

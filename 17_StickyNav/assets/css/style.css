@@ -1,0 +1,130 @@
+
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: sticky nav/tag
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. HEADER
+  2. PROJECT INOS
+  3. SLIDER
+  4. BRIEF
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-font-family: sans-serif;
+  --base-padding: 2rem;
+  --main-color: #EBEBEB;
+  --scd-color: #FBF8F0;
+  --shadow-color: #0c0c0c4d;
+}
+html, body {
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-family: var(--base-font-family);
+  width: 70%;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.project__info__item p {
+  margin: 0;
+}
+
+/************************************************
+1.	HEADER
+************************************************/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topics {
+  font-weight: 400;
+}
+
+/************************************************
+2.	PROJECT INFOS
+************************************************/
+
+.project__info {
+  width: 25rem;
+  background: var(--scd-color);
+  box-shadow: .3rem .3rem .2rem var(--shadow-color);
+  padding: var(--base-padding);
+  position: absolute;
+  margin: 0 0 0 -2rem;
+  list-style: none;
+}
+
+.fixed-nav .project__info {
+  position: fixed;
+}
+
+.project__info__item {
+  display: flex;
+  padding: .5rem;
+  border-bottom: 1px solid var(--shadow-color);
+}
+
+.project__info__item_label {
+  flex: 0 0 5rem;
+}
+
+.project__info__item_content {
+  flex: 0 1 auto;
+}
+
+/************************************************
+3.	SLIDER
+************************************************/
+
+.project__slider {
+  max-height: 25rem;
+  overflow-x: scroll;
+  overflow-y:  hidden;
+}
+
+.project__slider__container {
+  width: 100rem;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+}
+
+.project__slider img {
+  width: 30rem;
+  margin: 0 var(--base-padding);
+}
+
+/************************************************
+4.	BRIEF
+************************************************/
+
+.project__brief {
+  width: 80%;
+  margin: 0 auto;
+}
