@@ -44,31 +44,36 @@
     // });
 
     voicesDropdown.innerHTML = voices
+    .filter(v => v.lang.includes('en'))
     .map(v => `<option value="${v.name}">${v.name} (${v.lang})</option>`)
     .join('');
 
+    function toggle(start = true) {
+      speech.cancel();
+      if(start) speech.speak(msg);
+    }
 
-    console.log(msg, speech);
 
     function voiceModifier() {
-      console.log(this);
       if(this.name === 'rate') msg.rate = this.value;
       if(this.name === 'pitch') msg.pitch = this.value;
       if(this.name === 'text') msg.text = this.value;
-      console.log(msg);
+      toggle(true);
     }
 
-    options.forEach(e => e.addEventListener('click', voiceModifier));
-    voicesDropdown.addEventListener('click', () => {
+    function setVoice() {
       voices.forEach((v) => {
-        if(v.name == voicesDropdown.value) {
+        if(v.name === voicesDropdown.value) {
           msg.voice = v;
           msg.lang = v.lang;
         }
-      })
-    });
-    speakBtn.addEventListener('click', () => speech.speak(msg));
-    stopBtn.addEventListener('click', () => speech.cancel());
+      });
+    }
+
+    options.forEach(o => o.addEventListener('change', voiceModifier));
+    voicesDropdown.addEventListener('change', setVoice);
+    speakBtn.addEventListener('click', toggle);
+    stopBtn.addEventListener('click', toggle.bind(null,false));
 
   </script>
 </html>
