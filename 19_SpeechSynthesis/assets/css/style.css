@@ -1,0 +1,103 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0.0
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. WRAPPER
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-font-family: 'Open sans', sans-serif;
+  --title-font-family: 'Montserrat', sans-serif;
+  --base-padding: 1rem;
+  --base-color: #f5f6f7;
+  --accent-color: #f9eb59;
+  --gradient: linear-gradient(to bottom, #1C7CE0, #150051);
+  --shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px 0px;
+}
+
+html, body {
+  font-size: var(--base-font-size);
+  height: 100%;
+}
+
+body {
+  font-family: var(--base-font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--base-color) url('../images/white-wave.png');
+}
+
+* {
+  transition: all .5s;
+}
+
+button {
+  background: var(--accent-color);
+  border: none;
+  height: 2rem;
+}
+
+button:hover {
+  background: #000;
+  color: var(--base-color);
+}
+
+textarea {
+  background-color: var(--base-color);
+  border: none;
+  padding: var(--base-padding);
+}
+
+/************************************************
+1.	WRAPPER
+************************************************/
+
+.wrapper {
+  /* background: var(--gradient); */
+  background: #fff;
+  width: 50%;
+  box-shadow: var(--shadow);
+}
+
+.wrapper_head, .wrapper_body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 2rem;
+  align-content: center;
+}
+
+.wrapper_head {
+  background: var(--accent-color);
+  justify-content: center;
+  height: 4rem;
+  font-family: var(--title-font-family);
+  text-transform: lowercase;
+}
+
+.wrapper_body {
+  padding: var(--base-padding);
+}
+
+.wrapper_body > * {
+  width: 100%;
+  margin: .5rem var(--base-padding);
+}
