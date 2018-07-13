@@ -1,5 +1,0 @@
-Apports pédagogiques :
-
-- transition et ses événements (rotate, translate)
-- transition-timing-function et cubic-bezier
-- text inner shadow

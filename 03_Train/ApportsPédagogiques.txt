@@ -1,7 +1,0 @@
-Apports pédagogiques :
-
-- variables CSS
-- documentElement.style.setProperty()
-- vanilla JS syntax
-- html element custom data property (data-sizing)
-- '50/50' design with css

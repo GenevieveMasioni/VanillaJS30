@@ -1,3 +1,0 @@
-
-- key sequence detection
-- konami code trick

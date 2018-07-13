@@ -1,5 +1,0 @@
-Apports pédagogiques :
-
-- forms
-- classList methods
-- eventListener

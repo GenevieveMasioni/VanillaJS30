@@ -1,4 +1,0 @@
-Apports pédagogiques :
-
-- decrease time
-- check input validity
