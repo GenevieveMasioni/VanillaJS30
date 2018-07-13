@@ -13,6 +13,9 @@ Table of Contents:
   0. GLOBAL
   1. HEADER
   2. MENU
+  3. MAIN
+  4. ARTICLES
+  5. FOOTER
 
 **************************************************************/
 
@@ -28,6 +31,7 @@ Table of Contents:
   --title-font-family: 'Montserrat', sans-serif;
   --accent-color: #1C7CE0;
   --brand-color: #150051;
+  --highlight-color: #FBFF3D;
   --gradient: linear-gradient(to bottom, #1C7CE0, #150051);
 }
 
@@ -40,14 +44,41 @@ body {
   margin: 0;
 }
 
+* {
+  transition: all .5s;
+}
+
 a {
   text-decoration: none;
   color: var(--accent-color);
 }
 
 a:hover {
-  color: #fff;
-  background: var(--gradient);
+  color: var(--brand-color);
+}
+
+.highlight {
+  position: absolute;
+  background: var(--highlight-color);
+  border-radius: 20%;
+  z-index: -1;
+  transition: .2s;
+}
+
+li:hover .sub-menu {
+  display: inline;
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px 0px;
+  padding: var(--base-padding);
+}
+
+.menu .sub-menu li {
+  display: block;
 }
 
 /************************************************
@@ -106,7 +137,10 @@ main {
   flex: 1 1 4rem;
   margin: 1rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px 0px;
-  transition: .7s;
+}
+
+.related_article > * {
+  width: 100%;
 }
 
 .related_article h5 {
@@ -116,7 +150,6 @@ main {
 
 .related_article:hover {
   transform: translateY(-1rem);
-  transition: .7s;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 24px 0px;
 }
 
