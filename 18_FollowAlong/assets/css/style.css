@@ -26,6 +26,9 @@ Table of Contents:
   --base-font-family: 'Open sans', sans-serif;
   --base-padding: 1rem;
   --title-font-family: 'Montserrat', sans-serif;
+  --accent-color: #1C7CE0;
+  --brand-color: #150051;
+  --gradient: linear-gradient(to bottom, #1C7CE0, #150051);
 }
 
 html, body {
@@ -34,4 +37,94 @@ html, body {
 
 body {
   font-family: var(--base-font-family);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+a:hover {
+  color: #fff;
+  background: var(--gradient);
+}
+
+/************************************************
+1.	HEADER
+************************************************/
+
+header {
+  padding: var(--base-padding) 4rem;
+}
+
+/************************************************
+2.	MENU
+************************************************/
+
+.menu {
+  list-style: none;
+  padding: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: var(--title-font-family);
+}
+
+.menu li {
+  display: inline;
+  margin-right: var(--base-padding);
+}
+
+/************************************************
+3.	MAIN
+************************************************/
+
+main {
+  padding: var(--base-padding) 4rem;
+}
+
+/************************************************
+4.  ARTCILES
+************************************************/
+
+.main_article {
+  margin-bottom: 4rem;
+}
+
+.related_articles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.related_article {
+  height: 12rem;
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff;
+  padding: var(--base-padding) 2rem;
+  background: var(--gradient);
+  flex: 1 1 4rem;
+  margin: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px 0px;
+  transition: .7s;
+}
+
+.related_article h5 {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.related_article:hover {
+  transform: translateY(-1rem);
+  transition: .7s;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 24px 0px;
+}
+
+/************************************************
+5.	FOOTER
+************************************************/
+
+footer {
+  text-align: center;
+  padding: var(--base-padding) 0;
 }
