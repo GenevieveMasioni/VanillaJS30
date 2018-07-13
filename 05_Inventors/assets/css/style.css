@@ -1,0 +1,122 @@
+/************************************************************
+
+Theme name : Women inventors
+Description: An electric yet simple theme to give female scientists
+the credit they deserve.
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: my favorites female scientists, close the gender gap
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. SIDEBAR
+  2. MAIN
+  3. PROFILE
+  4. FOOTER
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font : 16px;
+  --title-font : 'Bungee Shade', sans-serif;
+  --font-family: 'Open Sans', 'Playfair Display', serif;
+  --base-padding: 1.5rem;
+  --subtext: .8rem;
+}
+
+html, body {
+  font-size: var(--base-font);
+}
+
+body {
+  background: #ffffff url("../images/worn-dots.png");
+  font-family: var(--font-family);
+  padding: 0 var(--base-padding);
+}
+
+label {
+  font-size: var(--subtext);
+}
+
+/************************************************
+1.	SIDEBAR
+************************************************/
+
+.sidebar {
+  background: #79bedeb3;
+  padding: 0 2rem;
+  margin: 0 0 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.parameters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--base-padding);
+}
+
+section.parameters div {
+  margin: 0 2rem;
+}
+
+
+#site-title {
+  font-size: 2rem;
+  font-family: var(--title-font);
+}
+
+/************************************************
+2.	MAIN
+************************************************/
+
+main.inventors {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/************************************************
+3.	PROFILE
+************************************************/
+
+.profile {
+  width: 20%;
+  margin: 0 1rem 1rem;
+  background: #F8F8F8;
+  padding: 1rem;
+  box-shadow: 0 0 .5rem #dedede;
+}
+
+.profile img {
+  width: 100%;
+}
+
+.name-dates {
+  font-weight: bold;
+}
+
+.bio {
+  font-size: .9rem;
+}
+
+
+/************************************************
+4.  FOOTER
+************************************************/
+
+footer {
+  font-size: var(--subtext);
+}

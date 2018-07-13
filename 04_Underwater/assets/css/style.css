@@ -1,0 +1,105 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: underwater, oceans, blue
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. PANELS
+  2. PRIMARY PANEL
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+:root {
+  --base-font: 'Open sans', 'Montserrat', sans-serif;
+}
+
+html, body {
+  font-size: 16px;
+}
+
+body {
+  color: #ffffff;
+  margin: 0;
+  font-family: var(--base-font);
+  font-weight: bold;
+  background: #04031d;
+}
+
+/************************************************
+1.	PANELS
+************************************************/
+
+.panel, .panel > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panels {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.panel {
+  flex-direction: column;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  font-size: 1.5rem;
+  transition: ease 0.09s;
+}
+
+.panel > * {
+  text-shadow: .1rem .1rem .2rem #000;
+  flex: 1 0 auto;
+}
+
+.panel p:nth-child(2) {
+  font-size: 3rem;
+}
+
+.panel p:nth-child(2n+1) {
+  display: none;
+}
+
+.panel1 {
+  background-image: url('../images/naomi-tamar.jpg');
+}
+
+.panel2 {
+  background-image: url('../images/erastus-mccart.jpg');
+}
+
+.panel3 {
+  background-image: url('../images/elisha-terada.jpg');
+}
+
+.panel4 {
+  background-image: url('../images/andres-abogabir.jpg');
+}
+
+/************************************************
+2.	PRIMARY PANEL
+************************************************/
+
+.primary-panel {
+  flex: 3;
+}
+
+.primary-panel p:nth-child(2n+1) {
+  display: inline;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Inventors</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900|Open+Sans|Bungee+Shade">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <section class="sidebar">
+    <header>
+      <h1 id="site-title">Women </br>inventors</h1>
+      <p>Greatest Female Scientists</p>
+    </header>
+    <section class="parameters">
+      <div class="field">
+        <h3>Field</h3>
+        <input type="checkbox" name="Informatics" value="" class="field">
+        <label for="Informatics">Informatics</label>
+        <input type="checkbox" name="Mathematics" value="" class="field">
+        <label for="Mathematics">Mathematics</label>
+        <input type="checkbox" name="Engineering" value="" class="field">
+        <label for="Engineering">Engineering</label>
+      </div>
+      <div class="century">
+        <h3>Century</h3>
+        <label for="century">18</label>
+        <input type="range" name="century" min="18" max="21" value="20" data-suffix="th" class="century">
+        <label for="century">21</label>
+      </div>
+      <div class="names">
+        <h3>Browse inventors</h3>
+        <select class="inventors" name="inventors"></select>
+      </div>
+      <div class="search-inventor">
+        <h3>Search for a name</h3>
+        <input type="search" name="search" value="" class="search">
+      </div>
+    </section>
+  </section>
+  <main class="inventors"></main>
+  <footer>
+    <p>&copy; Biographies from Wikipedia</p>
+  </footer>
+
+  <script type="text/javascript">
+  var d = new Date();
+
+  const inventors = [
+    { first: 'Marie', last: 'Curie', career: 'physicist',
+    category: 'Physics, Chemistry', bio: "Physicienne et chimiste polonaise, naturalisée française, reconnue pour la découverte de l'opium et du polonium.",
+    year: 1867 , passed: 1934},
+    { first: 'Ada', last: 'Lovelace', career: 'computing pioneer',
+    category: 'Informatics', bio: 'Comtesse anglaise, pionière de la science informatique.',
+    year: 1815, passed: 1852},
+    { first: 'Maria', last: 'Telkes', career: 'bio-physicist',
+    category: 'Physics, Chemistry', bio: "Scientifique américano-hongroise et inventrice ayant travaillé sur les technologies liées à l'énergie solaire.",
+    year: 1900, passed: 1995},
+    { first: 'Grace', last: 'Hopper', career: 'mathematician and programmer',
+    category: 'Mathematics, Informatics', bio: "Informaticienne américaine et Rear admiral de la marine américaine. Recoonue pour la conception du premier compilateur en 1951 (A-0 System) et du langage COBOL en 1959.",
+    year: 1906, passed: 1992},
+    { first: 'Shirley Ann', last: 'Jackson', career: 'physicist',
+    category: 'Physics', bio: "Physicienne américaine, spécialisée dans le domaine de la physique des matières condensées et des matériaux opto-électroniques.",
+    year: 1946, passed: d.getFullYear()},
+    { first: 'Rosalind', last: 'Franklin', career: 'physical chemist',
+    category: 'Physics, Chemistry', bio: "Physico-chimiste, pionnière de la biologie moléculaire britannique ayant participé de manière déterminante à la découverte de la structure de l'acide désoxyribonucléique (ADN) et du virus de la mosaïque du tabac.",
+    year: 1920, passed: 1958},
+    { first: 'Henrietta', last: 'Swan Leavitt', career: 'astronom',
+    category: 'Engineering', bio: "Astronome américaine ayant découvert la relation entre la luminosité des étoiles variables et leur période de variation.",
+    year: 1868, passed: 1921},
+    { first: 'Grete', last: 'Hermann', career: 'mathematician',
+    category: 'Mathematics', bio: "Mathématicienne et philosophe allemande connue pour ses travaux en mathématiques, en physique, en philosophie et en éducation.",
+    year: 1901, passed: 1984},
+    { first: 'Gertrude', last: 'Blanch', career: 'mathematician',
+    category: 'Mathematics', bio: "Mathématicienne américaine, d'origine polonaise, ayant réalisé des études novatrices en analyse numérique et en informatique.",
+    year: 1897, passed: 1996},
+    { first: 'Ida', last: 'Rhodes', career: 'mathematician and programmer',
+    category: 'Mathematics, Informatics', bio: "Mathématicienne américaine d'origine ukrainienne, une des femmes au coeur du développement des prémices de l'ordinateur.",
+    year: 1900, passed: 1986},
+    { first: 'Margaret', last: 'Hamilton', career: 'mathematician (Apollo)',
+    category: 'Mathematics', bio: "Informaticienne et mathématicienne américaine. Elle était directrice du département génie logiciel du MIT Instrumentation Laboratory qui conçut le système embarqué du programme Apollo.",
+    year: 1936, passed: d.getFullYear()}
+  ];
+
+  const people = ['Dimple, Halloran', 'Hannah, Luhman', 'Latonya, Torres',
+  'Sana, Kitt', 'Dedra, Re', 'Betsy, Royalty', 'Jaimee, Goldner',
+  'Verline, Chubb', 'Adria, Loux', 'Carolee, Parrish', 'Judy, Broadhead',
+  'Bradley, Buitron', 'Antony, Burlison', 'Meggan, Timoteo', 'Chanell, Zeller',
+  'Detra, Tsui', 'Roberta, Tullius', 'Phylis, Thibodeaux', 'Augusta, Charley',
+  'Michelle, South', 'Elmer, Demo', 'Malinda, Dipiazza', 'Vivien, Wigley',
+  'Almeta, Jasmin', 'Ricardo, Smail', 'Jon, Mcgranahan', 'Evette, Maus',
+  'Dominque, Hilty', 'Clayton, Finnegan', 'Ethel, Rendell'
+];
+
+// Remove all main's children nodes
+function clearMain() {
+  main.innerHTML = '';
+}
+
+// Display an inventor profile
+function display(e) {
+  const profile = document.createElement('div');
+  profile.classList.add('profile');
+
+  const p_name_dates = document.createElement('p');
+  const p_bio = document.createElement('p');
+
+  p_name_dates.classList.add('name-dates');
+  p_name_dates.innerHTML = e.first + " " + e.last + " (" + e.year + "-" + e.passed + ")";
+
+  p_bio.classList.add('bio');
+  p_bio.innerHTML = e.bio;
+
+  const img = document.createElement('img');
+  img.alt = e.first + " " + e.last;
+  img.src = `assets/images/${e.first + "-" + e.last}.jpg`;
+
+  profile.appendChild(img);
+  profile.appendChild(p_name_dates);
+  profile.appendChild(p_bio);
+  main.appendChild(profile);
+}
+
+// Display inventors form a filtered list
+function displayList(e) {
+  e.forEach(i => display(i));
+}
+
+// Initialise the inventors select options
+function initialise(e) {
+  const opt = document.createElement('option');
+  opt.value = opt.innerHTML = e.first + " " + e.last;
+  select_list.add(opt);
+  display(e);
+}
+
+// Filter inventors
+function filteredInventors() {
+  var inv;
+  if(this.type == 'checkbox') {
+    inv = inventors.filter(i => i.category.includes(`${this.name}`));
+    clearMain();
+    displayList(inv);
+  } else if (this.type == 'range') {
+    inv = inventors.filter(i => (Number(i.year.toString().substr(0,2))) + 1 == this.value);
+    clearMain();
+    displayList(inv);
+  } else if(this.type == 'search') {
+    inv = inventors.filter(i => (i.first + " " + i.last).toLowerCase().includes(this.value.toLowerCase()));
+    clearMain();
+    displayList(inv);
+  } else {
+    inv = inventors.filter(i => i.first + " " + i.last == this.selectedOptions.item(0).label);
+    clearMain();
+    displayList(inv);
+  }
+}
+
+const main = document.querySelector('main');
+const inputs = document.querySelectorAll('input');
+const select_list = document.querySelector('select');
+
+// Initialise
+inventors.forEach(inv => initialise(inv));
+
+inputs.forEach(input => input.addEventListener('change', filteredInventors));
+select_list.addEventListener('change', filteredInventors);
+
+
+/* EDUCATIONAL PURPOSE CODE */
+
+// 1. Array.prototype.filter()
+// Born in 1800's
+const inventors_1800 = inventors.filter(inventor => inventor.year >= 1800 && inventor.year < 1900);
+console.table(inventors_1800);
+
+// 2. Array.prototype.map()
+// An array of first and last names
+const inventors_map = inventors.map(i => i.first + " " + i.last);
+console.table(inventors_map);
+// same result, more efficient
+const fullnames = inventors.map(i => `${i.first} ${i.last}`);
+console.table(fullnames);
+
+// 3. Array.prototype.sort()
+// Sort by birthdate, oldest to youngest
+const inventors_sort = inventors.sort((a,b) => a.year > b.year ? 1 : -1);
+console.table(inventors_sort);
+
+// 4. Array.prototype.reduce()
+// How many years did all the people live ?
+const avg_years_lived = inventors.reduce((total, inventor) => {
+  return total += (inventor.passed - inventor.year);
+}, 0);
+console.log(avg_years_lived/inventors.length);
+
+// 5. Array.prototype.sort()
+// Sort by years lived (youngest to oldest)
+const oldest = inventors.sort((a,b) => (a.passed - a.year) > (b.passed - b.year) ? 1 : -1);
+console.table(oldest);
+
+// 6. Array.prototype.sort()
+// Sort the people alphabetically by last name
+const alpha = inventors.sort((a,b) => a.last.charAt(0) > b.last.charAt(0) ? 1 : -1);
+console.table(alpha);
+
+// 7. Create a list of Paris' boulevards that containes 'de' anywhere in the name
+// https://en.wikipedia.org/wiki/category:Boulevards_in_Paris
+
+const cat = document.querySelector('.mw-category');
+const links = Array.from(cat.querySelectorAll('a'));
+// const links = [...cat.querySelectorAll('a')]; // ES6 spread
+
+const de = links.map(i => i.textContent)
+.filter(i => i.includes('de'));
+console.log(de);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Apports pédagogiques :
+
+- fetch() JSON file
+- input event
+- CSS variables

@@ -1,0 +1,37 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0.0
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. HEADER
+  2. MENU
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-font-family: 'Open sans', sans-serif;
+  --base-padding: 1rem;
+  --title-font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-family: var(--base-font-family);
+}

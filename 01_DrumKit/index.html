@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>The Drum Kit</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Metal+Mania">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <!-- Header section -->
+  <header>
+    <h1 id="site-title">The Drum Kit</h1>
+    <h3>Press a key to play.</h3>
+  </header>
+  <!-- Main section -->
+  <main class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <p class="sound">clap</p>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <p class="sound">hithat</p>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <p class="sound">kick</p>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <p class="sound">openhat</p>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <p class="sound">boom</p>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <p class="sound">ride</p>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <p class="sound">snare</p>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <p class="sound">tom</p>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <p class="sound">tink</p>
+    </div>
+  </main>
+  <!-- Footer section -->
+  <footer>
+    <p>&copy; Photo by Gabriel Barletta on Unsplash</p>
+  </footer>
+
+  <audio data-key="65" src="assets/audio/clap.wav"></audio>
+  <audio data-key="83" src="assets/audio/hihat.wav"></audio>
+  <audio data-key="68" src="assets/audio/kick.wav"></audio>
+  <audio data-key="70" src="assets/audio/openhat.wav"></audio>
+  <audio data-key="71" src="assets/audio/boom.wav"></audio>
+  <audio data-key="72" src="assets/audio/ride.wav"></audio>
+  <audio data-key="74" src="assets/audio/snare.wav"></audio>
+  <audio data-key="75" src="assets/audio/tom.wav"></audio>
+  <audio data-key="76" src="assets/audio/tink.wav"></audio>
+
+  <script type="text/javascript">
+
+  function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    if (!audio) return; // if no audio, stop the func from running
+    audio.currentTime = 0; // rewind to start
+    audio.play();
+    key.classList.add('playing');
+  }
+
+  function removeTransition(e) {
+    if(e.propertyName !== "transform") return; // skip the transition
+    if(this.classList.contains('playing')) {
+      this.classList.remove('playing');
+    }
+  }
+
+  const keys = document.querySelectorAll('.key');
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+  window.addEventListener('keydown', playSound);
+
+  </script>
+</body>
+</html>

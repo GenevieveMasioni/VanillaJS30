@@ -1,0 +1,306 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: slide in
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. HEADER
+  2. MENU
+  3. HERO
+  4. WORK
+  5. ABOUT
+  6. BLOG
+  7. HIRE
+  8. FOOTER
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-font-family: 'Roboto Mono',sans-serif;
+  --base-padding: 1rem;
+  --title-font-family: 'Rubik', sans-serif;
+  --main-color: #0c0c0c;
+  --scd-color: #0f33ff;
+  --third-color: #282828;
+  --base-color: #fff;
+}
+
+html, body {
+  font-size: var(--base-font-size);
+  cursor: crosshair;
+}
+
+body {
+  background: var(--main-color);
+  color: var(--base-color);
+  font-size: var(--base-font-size);
+  font-family: var(--base-font-family);
+  overflow-x: hidden;
+}
+
+* {
+  transition: ease .6s;
+}
+
+a:visited {
+  color: #fec200;
+}
+
+section, header {
+  margin: var(--base-padding) auto;
+  width: 70%;
+}
+
+section {
+  margin: 4rem auto;
+}
+
+.about, .hire, .work__portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.title {
+  font-family: var(--title-font-family);
+}
+
+.subTitle {
+  font-size: 2rem;
+}
+
+.screenSizeError {
+  display: none;
+}
+
+/************************************************
+1.	HEADER
+************************************************/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--base-padding);
+}
+
+/************************************************
+2.	MENU
+************************************************/
+
+.menu {
+  padding: 0;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.menu-display {
+  position: fixed;
+  margin: 0 auto;
+  top: 5rem;
+  right: 15%;
+  z-index: 10;
+  font-size: 1.5rem;
+}
+
+/************************************************
+3.	HERO
+************************************************/
+
+.heroTitle {
+  font-size: 5rem;
+}
+
+/************************************************
+4.	WORK
+************************************************/
+
+.work__portfolio {
+  justify-content: space-around;
+}
+
+.work__portfolio img {
+  margin: var(--base-padding) 0;
+}
+
+img.work__portfolio__hero {
+  width: 65%;
+}
+
+.work__portfolio__side {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+}
+
+.work__portfolio__side img {
+  width: 100%;
+}
+
+.work__portfolio__scd {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.work__portfolio__scd > * {
+  margin: var(--base-padding) 0;
+  width: 30%;
+}
+
+/************************************************
+5.	ABOUT
+************************************************/
+
+.about .subTitle {
+  width: 100%;
+  text-align: center;
+}
+
+.about__story, .two_column {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about__story_left, .about__story_right,
+.two_column_left, .two_column_right {
+  margin: var(--base-padding);
+}
+
+/************************************************
+6.	BLOG
+************************************************/
+
+.blog img {
+  width: 40%;
+  margin: var(--base-padding);
+}
+
+img.blog__img__left {
+  float: left;
+}
+
+img.blog__img__right {
+  float: right;
+}
+
+.slide_in {
+  opacity: 0;
+  transition: all .5s;
+}
+
+.blog__img__left.slide_in.active,
+.work__left.slide_in.active,
+.blog__img__right.slide_in.active,
+.work__right.slide_in.active {
+  opacity: 1;
+  transform: translateX(0%) scale(1);
+}
+
+.blog__img__left.slide_in, .work__left.slide_in {
+  transform: translateX(-80%) scale(0.95);
+}
+
+.blog__img__right.slide_in, .work__right.slide_in {
+  transform: translateX(80%) scale(0.95);
+}
+
+/************************************************
+7.	HIRE
+************************************************/
+
+.hire .subTitle {
+  text-align: center;
+  width: 100%;
+}
+
+.hire__expertises {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hire__expertise {
+  text-align: center;
+  padding: var(--base-padding);
+  margin: var(--base-padding);
+}
+
+.hire__expertise input {
+  margin: var(--base-padding);
+}
+
+.hire__contact {
+  width: 100%;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.hire__contactName, .hire__contactEmail {
+  background: transparent;
+  color: inherit;
+  border: none;
+  border-bottom: .2rem solid var(--base-color);
+  padding: var(--base-padding) 0;
+  font-size: var(--base-padding);
+  margin: .5rem;
+}
+
+.hire__request {
+  width: 100%;
+  text-align: center;
+}
+
+.hire__sendBtn {
+  background: var(--scd-color);
+  color: var(--base-color);
+  padding: var(--base-padding) 3rem;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: var(--base-padding);
+  font-weight: bold;
+  border-radius: .5rem;
+}
+
+/************************************************
+8.	FOOTER
+************************************************/
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--base-padding) 2rem;
+  text-align: center;
+  color: var(--third-color);
+  height: 4rem;
+  clear: both;
+}
+
+.footer__social {
+  width: 7rem;
+  display: flex;
+  justify-content: space-between;
+}

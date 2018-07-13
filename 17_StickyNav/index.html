@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>designbloom</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>designbloom</h1>
+    <h3><span class="topics"></span> lovers</h3>
+  </header>
+  <main>
+    <div class="project">
+      <ul class="project__info" id="project__info">
+        <li class="project__info__item">
+          <p class="project__info__item_label">Project :</p>
+          <p class="project__info__item_content">Camel</p>
+        </li>
+        <li class="project__info__item">
+          <p class="project__info__item_label">Year :</p>
+          <p class="project__info__item_content">2018</p>
+        </li>
+        <li class="project__info__item">
+          <p class="project__info__item_label">Author :</p>
+          <p class="project__info__item_content">Random</p>
+        </li>
+        <li class="project__info__item">
+          <p class="project__info__item_label">Type :</p>
+          <p class="project__info__item_content">Interior design</p>
+        </li>
+      </ul>
+      <img src="assets/images/daniil-silantev2.jpg" alt="red dragon">
+      <div class="project__brief">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac lacinia magna.
+          Fusce dapibus vulputate egestas. Aliquam felis urna, dignissim vitae venenatis
+          quis, blandit ut ex. Curabitur sollicitudin luctus libero eget maximus.
+          Nullam suscipit eget magna facilisis varius. Proin porta ex a velit iaculis
+          pellentesque. Sed tristique massa ipsum, nec bibendum mi mattis et. Cras
+          aliquam orci quis neque efficitur lacinia. Suspendisse id imperdiet quam.
+          Curabitur ultricies dictum gravida. Pellentesque eget elementum ante.
+          Sed ut faucibus sem. Nulla cursus elit quis lobortis finibus. Pellentesque
+          egestas sem eu purus laoreet, quis ultricies sem condimentum.
+        </p>
+        <p>
+          Nulla facilisi. Nulla velit est, bibendum sit amet blandit sit amet, facilisis
+          ut neque. Sed eget molestie velit. Proin sit amet porta dolor, quis semper nunc.
+          Donec tincidunt et sapien vitae hendrerit. Morbi augue quam, feugiat nec
+          fermentum vitae, tempus et diam. Praesent accumsan ante libero.
+        </p>
+      </div>
+      <div class="project__slider">
+        <div class="project__slider__container">
+          <img title="home 1" alt="home 1" src="assets/images/daniil-silantev.jpg">
+          <img title="home 1" alt="home 1" src="assets/images/daniil-silantev2.jpg">
+          <img title="home 1" alt="home 1" src="assets/images/jared-rice.jpg">
+          <!-- <img title="home 1" alt="home 1" src="assets/images/grovemade.jpg"> -->
+        </div>
+      </div>
+
+    </div>
+    <div class="project">
+      <ul class="project__info" id="project__info">
+        <li class="project__info__item">
+          <p class="project__info__item_label">Project :</p>
+          <p class="project__info__item_content">Treehouse museum</p>
+        </li>
+        <li class="project__info__item">
+          <p class="project__info__item_label">Year :</p>
+          <p class="project__info__item_content">2018</p>
+        </li>
+        <li class="project__info__item">
+          <p class="project__info__item_label">Author :</p>
+          <p class="project__info__item_content">Guggenheim</p>
+        </li>
+        <li class="project__info__item">
+          <p class="project__info__item_label">Type :</p>
+          <p class="project__info__item_content">Architecture</p>
+        </li>
+      </ul>
+      <img src="assets/images/ik-lab-gallery.jpg" alt="treehouse museum">
+      <div class="project__brief">
+        <p>
+          Quisque vitae congue neque. Cras a augue erat. Duis posuere eget arcu in rutrum.
+          Donec quis scelerisque lacus. Nulla posuere accumsan libero ac dapibus.
+          Nulla non purus quis arcu laoreet auctor. Integer tincidunt, mi a elementum
+          posuere, quam eros posuere elit, consectetur rhoncus enim ipsum nec leo.
+        </p>
+        <p>
+          Donec rhoncus, turpis ut blandit volutpat, erat metus mattis quam,
+          ut rutrum felis turpis sit amet ipsum. Integer finibus nisi in elementum
+          tincidunt. Maecenas pellentesque enim ac turpis gravida, ut commodo
+          neque tristique. Cras libero lorem, elementum id libero a, congue
+          posuere mi. Vivamus id mattis tortor, vitae fringilla massa. Nulla
+          dignissim leo diam, convallis vestibulum elit lobortis in. Vestibulum
+          viverra augue vitae tincidunt posuere. Integer sit amet mauris elit.
+          Nullam eros velit, elementum a eros vitae, ornare volutpat tellus.
+          Pellentesque mollis, sem in euismod vestibulum, eros tortor fermentum
+          arcu, vel luctus nisl purus ut elit. Donec sed elit tristique,
+          sagittis orci nec, ullamcorper metus. Etiam rutrum enim nec nulla
+          faucibus porta. Donec scelerisque accumsan vulputate. Morbi erat
+          elit, facilisis vel enim sed, tincidunt sollicitudin justo.
+          Etiam vitae leo nisi.
+        </p>
+      </div>
+      <div class="project__slider">
+        <div class="project__slider__container">
+          <img title="home 1" alt="home 1" src="assets/images/ik-lab-gallery-2.jpg">
+          <img title="home 1" alt="home 1" src="assets/images/ik-lab-gallery-3.jpg">
+          <img title="home 1" alt="home 1" src="assets/images/ik-lab-gallery-4.jpg">
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script type="text/javascript">
+  const topics = ["architecture", "design", "art", "technology", "interiors"]
+
+
+  const nav = document.querySelector('#project__info');
+  const topOfNav = nav.offsetTop;
+  const topic = document.querySelector('.topics');
+
+  function fixNav() {
+      if(window.scrollY >= topOfNav) {
+        document.body.classList.add('fixed-nav');
+      } else {
+        document.body.classList.remove('fixed-nav');
+      }
+  }
+
+  let i = 0;
+  function displayTopics() {
+    if(i >= topics.length) i = 0;
+    topic.textContent = topics[i];
+    i++;
+  }
+
+  window.addEventListener('scroll', fixNav);
+
+  setInterval(displayTopics, 1000);
+
+  </script>
+</body>
+</html>

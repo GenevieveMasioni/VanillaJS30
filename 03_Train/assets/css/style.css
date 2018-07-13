@@ -1,0 +1,145 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: css, variables
+
+**************************************************************
+
+Table of Contents:
+
+0. GLOBAL
+1. SECTIONS
+2. HEADER
+3. PARAMETERS
+4. SAMPLE IMAGE
+5. CREDITS
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --subtitle: .8rem;
+  --subtext : .9rem;
+  --base-font: 'Playfair Display', serif;
+  --bg-color: #253a3b;
+  --spacing: 10px;
+  --blur: 0;
+  --base: #253a3b;
+  --grayscale: 0;
+  --hue: 1deg;
+}
+
+html, body {
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-family: var(--base-font);
+  color: #fff;
+}
+
+h3 {
+  text-align: center;
+}
+
+label {
+  font-size: var(--subtext);
+}
+
+/************************************************
+1.	SECTIONS
+************************************************/
+
+section {
+  width: 50%;
+  position: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+section.left {
+  background: var(--bg-color);
+  right: 50%;
+}
+
+section.right {
+  background: #F9F9F9 url("../images/worn-dots.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+}
+
+/************************************************
+2.	HEADER
+************************************************/
+
+header {
+  padding: 1rem;
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+#site-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.subtitle {
+  font-size: var(--subtitle);
+}
+
+/************************************************
+3. PARAMETERS
+************************************************/
+
+.parameters {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.parameters input {
+  margin: 1rem 0;
+}
+
+.param {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/************************************************
+4. SAMPLE IMAGE
+************************************************/
+
+section.right img, #sample-image {
+  width: 23rem;
+  margin: 0 auto;
+  filter: drop-shadow(var(--spacing) var(--spacing) var(--blur) var(--base)) hue-rotate(var(--hue)) grayscale(var(--grayscale));
+}
+
+/************************************************
+5.	CREDITS
+************************************************/
+
+footer {
+  width: 95%;
+  font-size: var(--subtitle);
+  position: absolute;
+  bottom: 0;
+  color: #122223;
+}

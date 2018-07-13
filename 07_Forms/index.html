@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forms</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Faster+One">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 id="site-title">Swoosh</h1>
+    </header>
+    <main>
+      <form class="left" action="#" method="post">
+        <input type="text" name="first-name" value="" placeholder="First Name">
+        <input type="text" name="last-name" value="" placeholder="Last Name">
+        <input type="email" name="email" value="" placeholder="Email">
+        <input type="password" name="password" value="" placeholder="Password">
+        <button type="button" name="button" class="green-btn">Sign Up</button>
+      </form>
+      <section class="container">
+        <section class="left">
+          <button type="button" name="button" class="sign-up">Sign Up</button>
+        </section>
+        <section class="right">
+          <button type="button" name="button" class="login">Login</button>
+        </section>
+      </section>
+    </main>
+
+    <script type="text/javascript">
+    const form = document.querySelector('form');
+    var formNodes = document.querySelectorAll('form input');
+    const btnSignUp = document.querySelector('.sign-up');
+    const btnLogin = document.querySelector('.login');
+    const btnValidate = document.querySelector('.green-btn');
+
+    function toRight() {
+      form.classList.remove('left');
+      form.classList.add('right');
+      btnValidate.innerHTML = 'Login';
+      console.log(form.children[0], form.children[1]);
+      form.children[0].style.display = 'none';
+      form.children[1].style.display = 'none';
+    }
+
+    function toLeft() {
+      form.classList.remove('right');
+      form.classList.add('left');
+      btnValidate.innerHTML = 'Sign Up';
+      console.log(form.children[0], form.children[1]);
+      form.children[0].style.display = 'block';
+      form.children[1].style.display = 'block';
+    }
+
+    function checkForm() {
+      formNodes = document.querySelectorAll('form input');
+      formNodes.forEach((i) => {
+        if(i.value === '') i.style.color = 'red';
+        if(i.name === 'email' && !i.value.includes('@')) {
+          i.style.color = 'red';
+          i.value = '';
+          i.placeholder = 'Enter a valide email address';
+        }
+      });
+    }
+
+    function reset() {
+      this.style.color = 'black';
+    }
+
+    btnSignUp.addEventListener('click', toLeft);
+    btnLogin.addEventListener('click', toRight);
+    btnValidate.addEventListener('click', checkForm);
+    formNodes.forEach((i) => i.addEventListener('focus', reset));
+
+    </script>
+  </body>
+</html>

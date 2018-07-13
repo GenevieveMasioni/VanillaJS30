@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gafam</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="instructions">
+      <h1 class="title">à l'aide !</h1>
+      <p>Cliquez sur chaque case pour empêcher les
+        <span class="gafam">
+          <a href="https://fr.wikipedia.org/wiki/GAFAM" target="_blank"
+          title="En savoir plus sur les Gafam">Gafam</a>
+        </span> (Google, Amazon, Facebook, Apple, Microsoft) de nous envahir !
+      </p>
+      <button type="button" name="btnStart" class="start">Commencer</button>
+    </div>
+    <main>
+    <table>
+      <tbody>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+</main>
+    <script type="text/javascript">
+    const plantIco = '<i class="fa fa-2x fa-bomb"></i>';
+    const icons = [
+      {name: 'amazon', ico: '<i class="fa fa-2x fa-amazon"></i>', color: '#ff9900'},
+      {name: 'google', ico: '<i class="fa fa-2x fa-google"></i>', color: '#4285f4'},
+      {name: 'windows', ico: '<i class="fa fa-2x fa-windows"></i>', color: '#00a1f1'},
+      {name: 'apple', ico: '<i class="fa fa-2x fa-apple"></i>', color: '#fff'},
+      {name: 'facebook', ico: '<i class="fa fa-2x fa-facebook"></i>', color: '#3b5998'}
+    ]
+
+    const startBtn = document.querySelector('.start');
+    const table = document.querySelector('table');
+    const cells = document.querySelectorAll('.row td');
+
+    function run() {
+      startBtn.parentElement.style.display = 'none';
+      table.style.display = 'table';
+      let icoMin = Math.ceil(0);
+      let icoMax = Math.floor(icons.length - 1);
+      let icoNum = Math.floor(Math.random() * (icoMax - icoMin + 1) + icoMin);
+
+      let cellMin = Math.ceil(0);
+      let cellMax = Math.floor(cells.length - 1);
+      let cellNum = Math.floor(Math.random() * (cellMax - cellMin + 1) + cellMin);
+
+      cells.item(cellNum).innerHTML = icons[icoNum].ico;
+      cells.item(cellNum).style.backgroundColor = '#db4437';
+    }
+
+    function plant() {
+      this.style.backgroundColor = "#0f9d58";
+      this.innerHTML = plantIco;
+    }
+
+    startBtn.addEventListener('click', () => setInterval(run, 700));
+    cells.forEach((c) => c.addEventListener('click', plant));
+
+    </script>
+  </body>
+</html>

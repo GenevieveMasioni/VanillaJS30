@@ -1,0 +1,46 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: css, variables
+
+**************************************************************
+
+Table of Contents:
+
+  1. MEDIA QUERY < 935px
+
+**************************************************************/
+
+
+/************************************************
+1.	MEDIA QUERY < 935px
+************************************************/
+
+@media only screen and (max-width: 935px) {
+  section, footer {
+    position: relative;
+  }
+
+  section {
+    width: 100%;
+    top: auto;
+    bottom: auto;
+  }
+
+  section.right {
+    left: auto;
+  }
+
+  section.left {
+    right: auto;
+  }
+
+  #sample-image {
+    margin: 2.5rem auto;
+  }
+
+}

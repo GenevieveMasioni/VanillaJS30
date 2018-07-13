@@ -1,0 +1,136 @@
+/************************************************************
+
+Theme name :
+Description:
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags:
+
+**************************************************************
+
+Table of Contents:
+
+0. GLOBAL
+1. APP
+2. HEADER
+3. TASKS
+4. ITEMS
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-font-family: 'Open Sans', sans-serif;
+  --base-padding: 1rem;
+  --main-color: #ed9663;
+  --scd-color: gray;
+  --shadow-color: #88411d;
+  --header-sh-color: #320d02;
+}
+
+html, body {
+  font-size: var(--base-font-size);
+  background: #f7f7f7;
+}
+
+body {
+  font-family: var(--base-font-family);
+  background: url('../images/francois-olwage.jpg') no-repeat center;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+input[type=checkbox] {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/************************************************
+1.	APP
+************************************************/
+
+.app {
+  width: 25rem;
+  background: var(--main-color);
+  margin: var(--base-padding) auto;
+  padding-bottom: 2rem;
+  height: 40rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: 0 0 1rem var(--shadow-color);
+}
+
+/************************************************
+2.	HEADER
+************************************************/
+
+header {
+  width: 100%;
+  background: var(--main-color);
+  padding: var(--base-padding) 2rem;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 1rem 2rem -2rem var(--header-sh-color);
+  z-index: 10;
+}
+
+header p {
+  width: 100%;
+}
+
+.primaryTitle {
+  margin-left: 30%;
+}
+
+.date {
+  color: var(--header-sh-color);
+  margin-top: 0;
+}
+
+/************************************************
+3.	TASKS
+************************************************/
+
+.tasks {
+  margin: 0 auto;
+  width: 80%;
+  height: 70%;
+  background: #fff;
+  overflow-y: hidden;
+  font-size: .8rem;
+  scroll-behavior: smooth;
+  border-radius: 2%;
+}
+
+/************************************************
+4.	ITEMS
+************************************************/
+
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: var(--base-padding) 2rem;
+}
+
+
+.item p {
+  margin: 0 var(--base-padding);
+}
