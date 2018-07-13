@@ -103,18 +103,18 @@
   function handleAudio(e) {
     if(audio.currentTime > 35) {
       updateBgInterval = 5000;
-      var myInt = setInterval(updateBg, updateBgInterval);
+<<<<<<< HEAD
+=======
+      setInterval(updateBg, updateBgInterval);
+>>>>>>> e2d392cf8c14e62c9c38b1a94ebcab9b26332b38
     }
 
     if(audio.currentTime >= 45) {
       updateBgInterval = 3000;
     }
-
-    if(audio.ended) {
-      console.log('ended !', myInt);
-      clearInterval(myInt);
-      body.style.background = '#000';
-    }
+<<<<<<< HEAD
+=======
+>>>>>>> e2d392cf8c14e62c9c38b1a94ebcab9b26332b38
   }
 
   function togglePlay(e) {
@@ -130,9 +130,20 @@
     hue += 40;
   }
 
+<<<<<<< HEAD
+=======
+  function stopEverything() {
+    updateBgInterval = 0;
+    body.style.background = 'black';
+  }
+
   audio.addEventListener('timeupdate', debounce(handleAudio));
+  audio.addEventListener('ended', stopEverything);
   monsters.addEventListener('click', togglePlay);
 
+  // setInterval(updateBg, updateBgInterval);
+
+>>>>>>> e2d392cf8c14e62c9c38b1a94ebcab9b26332b38
   </script>
 </body>
 </html>

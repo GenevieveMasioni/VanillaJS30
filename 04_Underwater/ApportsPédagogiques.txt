@@ -1,0 +1,6 @@
+Apports pédagogiques :
+
+- variables CSS
+- addEventListener()
+- mouseover & mouseout events
+- flexbox
