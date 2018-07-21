@@ -1,0 +1,4 @@
+
+- fetch data from an api
+- css user-select property
+- click and drag to scroll effect
