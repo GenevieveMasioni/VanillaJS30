@@ -1,0 +1,148 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0.0
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. HEADER
+  2. MAIN
+  3. POSTS
+  4. FOOTER
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-font-family: sans-serif;
+  --base-padding: 1rem;
+  --base-color: #191919;
+  --accent-color: #0057ff;
+  --body-bg-color: #fafafa;
+  --gradient: linear-gradient(to bottom, #1C7CE0, #150051);
+  --shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px 0px;
+}
+
+html, body {
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-family: var(--base-font-family);
+  background: var(--body-bg-color);
+  margin: 0;
+  color: var(--base-color);
+}
+
+* {
+  transition: all .5s;
+}
+
+header, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/************************************************
+1.	HEADER
+************************************************/
+
+header {
+  background: var(--base-color);
+  color: var(--body-bg-color);
+  padding: var(--base-padding);
+}
+
+/************************************************
+2.	MAIN
+************************************************/
+
+main > * {
+  margin-bottom: 4rem;
+}
+
+.hero_section {
+  text-align: center;
+  background: var(--accent-color) url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+  padding: var(--base-padding);
+  color: var(--body-bg-color);
+}
+
+/************************************************
+3.	POSTS
+************************************************/
+
+.posts {
+  margin: 2rem;
+  padding: var(--base-padding);
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 27rem;
+  white-space: nowrap;
+}
+
+.posts .post {
+  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+}
+
+.post {
+  width: 15rem;
+  height: 20rem;
+  color: var(--body-bg-color);
+  background: var(--accent-color);
+  padding: 2rem var(--base-padding);
+  display: inline-flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin:.7rem;
+  box-shadow: var(--shadow);
+  border-radius: 5%;
+}
+
+.post:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 24px 0px;
+}
+
+.profile_pic {
+  filter: grayscale(100%);
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
+  border-radius: 1px solid black;
+}
+
+/************************************************
+4.	FOOTER
+************************************************/
+
+footer {
+  background: var(--base-color);
+  color: #a4a4a4;
+}

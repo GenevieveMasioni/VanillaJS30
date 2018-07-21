@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Social deck</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <i class="fa fa-user fa-2x"></i>
+    </header>
+    <main>
+      <section class="hero_section">
+        <h2>Click and drag to scroll</h2>
+      </section>
+        <section class="posts">
+        </section>
+    </main>
+    <footer>
+      <p>&copy; 2018 All rights reserved.</p>
+    </footer>
+  </body>
+  <script type="text/javascript">
+  const apiUrl = 'https://randomuser.me/api/';
+  const posts = document.querySelector('.posts');
+
+  function createUserCard(e) {
+    console.log(e.results[0]);
+    profile = e.results[0];
+    const { email, name, phone, picture } = profile;
+    const card = document.createElement('div');
+    card.classList.add('post');
+    card.style.backgroundImage = `url("${picture.large}")`;
+
+    const sect = document.createElement('section');
+    sect.classList.add('post_meta');
+    sect.classList.add('noselect');
+    const title = document.createElement('h3');
+    title.classList.add('post_title');
+    title.textContent = `${name.first} ${name.last}`;
+    const infos = document.createElement('div');
+    infos.classList.add('infos');
+    const pEmail = document.createElement('p');
+    pEmail.innerHTML = `<i class="fa fa-email"></i> ${email}`;
+    const pPhone = document.createElement('p');
+    pPhone.innerHTML = `<i class="fa fa-email"></i> ${phone}`;
+
+    infos.append(pEmail);
+    infos.append(pPhone);
+    sect.append(title);
+    sect.append(infos);
+    card.append(sect);
+    posts.append(card);
+  }
+
+  // API
+  for(let i = 0; i < 15; ++i) {
+    fetch(apiUrl)
+    .then((r) => r.json())
+    .then((json) => {
+      createUserCard(json);
+    }).catch((error) => console.log('failed'));
+  }
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  posts.addEventListener('mousedown', (e) => {
+    isDown = true;
+    posts.style.cursor = 'grabbing';
+    startX = e.pageX - posts.offsetLeft;
+    scrollLeft = posts.scrollLeft;
+  });
+  posts.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+  posts.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+  posts.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - posts.offsetLeft;
+    posts.scrollLeft = scrollLeft + ((startX - x) * 3);
+  });
+
+
+
+  </script>
+</html>
